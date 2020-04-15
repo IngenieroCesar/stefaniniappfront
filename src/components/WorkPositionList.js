@@ -17,6 +17,7 @@ function WorkPositionList(props){
                     props.positions.map((position) => {
                         return(
                             <Element
+                            key={position.id}
                             id={position.id}
                             name={position.name}
                             />

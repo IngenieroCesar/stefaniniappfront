@@ -1,14 +1,12 @@
 import React from 'react';
 import WorkPositionList from '../components/WorkPositionList'
 // import Welcome from '../components/Welcome'
-// import AddExercise from '../components/AddExercise';
+import AddButton from '../components/AddButton';
 
 class WorkPositions extends React.Component {
     //Estamos haciendo el llamado a un "API".
-    constructor(props){
-        super(props)
         //Estamos generando un estado unicial para los test
-        this.state = {
+        state = {
             data: [{
                 "id": 1,
                 "name": "Technique Guides"
@@ -21,7 +19,6 @@ class WorkPositions extends React.Component {
             }]
 
         }
-    }
     
     render(){
         // console.log(this.state.data)
@@ -35,12 +32,12 @@ class WorkPositions extends React.Component {
                 /> */}
 
                 {/* Cuerpo de nuestro conponente!! */}
+                <AddButton
+                    url='/workpositions/new'
+                />
                 <WorkPositionList
                     positions={this.state.data}
                 />
-                {/* <AddExercise
-                    url='/exercise/new'
-                /> */}
 
                 {/* Footer de nuestro conponente!! */}
                 {/* <Footer
