@@ -1,24 +1,16 @@
 import React from 'react';
 
-class WorkpositionNew extends React.Component {
-
-
-    //Evento para empaquetar nuestra colección y enviarla con el submit
-    handleSubmit = e => {
-        //Evitamos que el submit nos refresque la pagina
-        e.preventDefault()
-        console.log(this.state)
-    }
-    
+class WorkpositionForm extends React.Component { 
 
     render(){
-        const {onChange, form} = this.props
+        const {onChange, onSubmit, form} = this.props
 
        return (
         <div className="container">
             
             <form 
-                // onSubmit={onSubmit}
+                //Llamamos la función para evitar el reload de la pagina
+                onSubmit={onSubmit}
             >
                 <div className="form-group">
                     <input 
@@ -29,13 +21,15 @@ class WorkpositionNew extends React.Component {
                         onChange={onChange}
                         //Con este metodo nos aseguramos de que la información tenga una sola fuente
                         value={form.title}
+                        required
                     />
-                </div>              
+                </div> 
+                <br></br>             
                 <button 
                     type="submit" 
                     className="btn btn-primary float-right"
                 >
-                    Submit
+                    Guardar
                 </button>
             </form>
         </div>
@@ -43,4 +37,4 @@ class WorkpositionNew extends React.Component {
     }
 }
 
-export default WorkpositionNew
+export default WorkpositionForm
